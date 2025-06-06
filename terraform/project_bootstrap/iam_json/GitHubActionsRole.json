@@ -1,0 +1,31 @@
+{
+    "RoleName": "GitHubActionsRole",
+    "Path": "/",
+    "Description": "Role for GitHub Actions to deploy infrastructure and upload files using OIDC",
+    "TrustPolicy": {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Principal": {
+                    "Federated": "arn:aws:iam::154864927037:oidc-provider/token.actions.githubusercontent.com"
+                },
+                "Action": "sts:AssumeRoleWithWebIdentity",
+                "Condition": {
+                    "StringEquals": {
+                        "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
+                    },
+                    "StringLike": {
+                        "token.actions.githubusercontent.com:sub": "repo:hihinsonli/05Python-Flask-EKS-Auto-Mode-App:*"
+                    }
+                }
+            }
+        ]
+    },
+    "CreateInstanceProfile": false,
+    "ManagedPoliciesArns": [
+        "arn:aws:iam::154864927037:policy/GitHubActionsPolicy"
+    ],
+    "InlinePolicies": [],
+    "Tags": []
+}

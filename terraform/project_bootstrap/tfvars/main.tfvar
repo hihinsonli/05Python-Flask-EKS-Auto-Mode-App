@@ -1,0 +1,4 @@
+account_number    = "154864927037"
+aws_region        = "ap-southeast-2"
+state_bucket_name = "terraform-state-19042025"
+environment       = "assessment"

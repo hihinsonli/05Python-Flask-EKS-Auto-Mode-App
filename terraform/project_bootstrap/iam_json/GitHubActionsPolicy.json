@@ -1,0 +1,105 @@
+{
+  "PolicyName": "GitHubActionsPolicy",
+  "Path": "/",
+  "Description": "Policy for GitHub Actions to deploy infrastructure and manage Terraform state",
+  "Document": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Action": "s3:*",
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "S3FullAccess"
+      },
+      {
+        "Action": "elasticloadbalancing:*",
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "ElasticloadbalancingFullAccess"
+      },
+      {
+        "Action": "ec2:*",
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "EC2FullAccess"
+      },
+      {
+        "Action": "ssm:*",
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "SSMFullAccess"
+      },
+      {
+        "Action": "iam:*",
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "IAMFullAccess"
+      },
+      {
+        "Action": "cloudformation:*",
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "CloudformationFullAccess"
+      },
+      {
+        "Action": "cloudwatch:*",
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "CloudWatchFullAccess"
+      },
+      {
+        "Action": "dynamodb:*",
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "DynamoDBFullAccess"
+      },
+      {
+        "Action": [
+          "logs:*",
+          "cloudwatch:*"
+        ],
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "CloudWatchLogsFullAccess"
+      },
+      {
+        "Action": [
+          "ecr:GetAuthorizationToken",
+          "ecr:BatchCheckLayerAvailability",
+          "ecr:CompleteLayerUpload",
+          "ecr:GetDownloadUrlForLayer",
+          "ecr:InitiateLayerUpload",
+          "ecr:PutImage",
+          "ecr:UploadLayerPart",
+          "ecr:CreateRepository",
+          "ecr:DescribeRepositories",
+          "ecr:BatchDeleteImage",
+          "ecr:DeleteRepository",
+          "ecr:DeleteRepositoryPolicy"
+        ],
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "ECRFullAccess"
+      },
+      {
+        "Action": [
+          "eks:*",
+          "iam:GetRole",
+          "iam:ListRoles"
+        ],
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "EKSFullAccess"
+      },
+      {
+        "Action": [
+          "autoscaling:*"
+        ],
+        "Effect": "Allow",
+        "Resource": "*",
+        "Sid": "AutoScalingFullAccess"
+      }
+    ]
+  },
+  "Tags": []
+}
