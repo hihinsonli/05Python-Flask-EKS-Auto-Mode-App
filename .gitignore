@@ -1,0 +1,58 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.env
+.env.*
+.Python
+.mypy_cache/
+.pytest_cache/
+.tox/
+coverage.*
+htmlcov/
+.cache/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Flask specific
+instance/
+*.db
+*.sqlite3
+
+# VSCode and IDEs
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# === Terraform ===
+*.tfstate
+*.tfstate.*
+*.backup
+*.tfvars
+*.tfvars.json
+.crash
+.terraform/
+.terraform.lock.hcl
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform plan output
+*.plan
+
+# === System ===
+.DS_Store
+Thumbs.db
